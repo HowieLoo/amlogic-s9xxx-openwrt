@@ -28,7 +28,7 @@
 current_path="${PWD}"
 openwrt_path="${current_path}/openwrt"
 openwrt_rootfs_file="*rootfs.tar.gz"
-docker_rootfs_file="openwrt-docker-armvirt-64-default-rootfs.tar.gz"
+docker_rootfs_file="openwrt-docker-armsr-armv8-default-rootfs.tar.gz"
 docker_path="${current_path}/config/docker"
 make_path="${current_path}/make-openwrt"
 common_files="${make_path}/openwrt-files/common-files"
@@ -171,7 +171,7 @@ make_dockerimg() {
     rm -rf ${tmp_path}
 
     sync && sleep 3
-    echo -e "${INFO} Docker files list: \n$(ls -l ${out_path})"
+    echo -e "${INFO} Docker files list: \n$(ls -lh ${out_path})"
     echo -e "${SUCCESS} Docker image successfully created."
 }
 
